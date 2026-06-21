@@ -4,9 +4,9 @@ import { Task } from "../types/task.types";
 
 import { TaskCard } from "./TaskCard";
 
-interface TaskListProps {
-  tasks: Task[]
-}
+type TaskListProps = {
+  tasks: Task[];
+};
 
 export function TaskList({
   tasks,

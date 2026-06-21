@@ -40,6 +40,9 @@ export default function HomePage() {
   };
 
   const { data, isLoading, error } = useTasks(queryParams);
+  const tasks = data?.data;
+  const pages = data?.pagination?.page;
+  const totalPages = data?.pagination?.totalPages;
 
   return (
     <ProtectedRoute>
@@ -63,11 +66,11 @@ export default function HomePage() {
 
           {!isLoading && !error && data && (
             <>
-              <TaskList tasks={data.data.tasks} />
+              <TaskList tasks={tasks ?? []} />
 
               <Pagination
-                page={data?.data.pagination?.page}
-                totalPages={data?.data.pagination?.totalPages}
+                page={pages ?? 1}
+                totalPages={totalPages ?? 1}
               />
             </>
           )}
