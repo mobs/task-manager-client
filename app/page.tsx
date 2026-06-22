@@ -40,9 +40,9 @@ export default function HomePage() {
   };
 
   const { data, isLoading, error } = useTasks(queryParams);
-  const tasks = data?.data;
-  const pages = data?.pagination?.page;
-  const totalPages = data?.pagination?.totalPages;
+  const tasks = data?.data?.tasks;
+  const pages = data?.data?.pagination?.page;
+  const totalPages = data?.data.pagination?.totalPages;
 
   return (
     <ProtectedRoute>

@@ -37,17 +37,7 @@ export function Navbar() {
         </Link>
 
         <div className="flex items-center gap-3">
-          {isAuthenticated === false ? (
-            <>
-              <Link href="/login">
-                <Button variant="secondary">Login</Button>
-              </Link>
-
-              <Link href="/signup">
-                <Button>Sign Up</Button>
-              </Link>
-            </>
-          ) : (
+          {isAuthenticated ? (
             <>
               <Link href="/">
                 <Button variant="secondary">Tasks</Button>
@@ -60,6 +50,16 @@ export function Navbar() {
               <Button variant="danger" onClick={logout}>
                 Logout
               </Button>
+            </>
+          ) : (
+            <>
+              <Link href="/login">
+                <Button variant="secondary">Login</Button>
+              </Link>
+
+              <Link href="/signup">
+                <Button>Sign Up</Button>
+              </Link>
             </>
           )}
         </div>

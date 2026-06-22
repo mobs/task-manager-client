@@ -12,8 +12,7 @@ export function useSignup() {
     mutationFn: authApi.signup,
 
     onSuccess: (data) => {
-      setToken(data.token);
-
+      setToken(data.data.token);
       toast.success("Account created");
     },
 

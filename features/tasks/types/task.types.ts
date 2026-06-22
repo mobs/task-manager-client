@@ -61,9 +61,7 @@ export interface Pagination {
 }
 
 export interface TasksResponse {
-  data: Task[];
-
-  pagination: Pagination;
+  data: {tasks: Task[], pagination: Pagination};
 }
 
 export interface TaskResponse {
